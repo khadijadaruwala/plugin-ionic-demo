@@ -12,7 +12,14 @@ export class PluginService extends IonicNativePlugin {
   static platforms = ['iOS'];
 
   add(num1, num2): Promise<any> {
-    const x = cordova(this, 'add', {}, [{ param1: num1, param2: num2 }]);
-    return x;
+    return cordova(this, 'add', {}, [{ param1: num1, param2: num2 }]);
+  }
+
+  coolMethod(myStrMsg): Promise<any> {
+    return cordova(this, 'coolMethod', {}, [myStrMsg]);
+  }
+
+  getUserData(): Promise<any> {
+    return cordova(this, 'getUserData', {}, []);
   }
 }
